@@ -8,7 +8,7 @@
 
 
 // Настройки DHT22
-#define DHTPIN D5           // Пин подключения DHT22
+#define DHTPIN 2           // Пин подключения DHT22
 #define DHTTYPE DHT22       // Тип датчика
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -30,7 +30,7 @@ WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "pool.ntp.org", 10800, 60000); // Часовой пояс +1 час (3600)
 
 // Настройки дисплея
-SSD1306Wire display(0x3C, 4, 5); // Адрес дисплея, SDA=D2, SCL=D1
+SSD1306Wire display(0x3C, SDA, SCL); // Адрес дисплея, SDA=D2, SCL=D1
 
 unsigned long lastMsg = 0; // Таймер для периодической отправки данных
 const long interval = 1000; // Интервал отправки данных (мс)
