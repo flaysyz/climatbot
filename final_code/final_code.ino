@@ -17,7 +17,7 @@ const char* ssid = "GERSTABILO";        // Имя Wi-Fi сети
 const char* password = "Gera20Lyuba07Oleg13";    // Пароль Wi-Fi
 
 // Настройки MQTT
-const char* mqtt_server = "192.168.1.98"; // Адрес MQTT брокера
+const char* mqtt_server = "84.201.174.42"; // Адрес MQTT брокера
 const int mqtt_port = 1883;   // Порт MQTT
 const char* mqtt_topic_temp = "test/temp"; // Топик для температуры
 const char* mqtt_topic_hum = "test/hum";   // Топик для влажности
@@ -52,7 +52,7 @@ void setup() {
   Serial.println(WiFi.localIP());
 
   // Настройка MQTT
-  client.setServer(mqtt_server, mqtt_port);
+  client.setServer(mqtt_server, mqtt_port, "gera", "gera123");
   client.setCallback(callback);
 
   // Настройка NTP
